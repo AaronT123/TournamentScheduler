@@ -18,6 +18,8 @@ namespace TournamentScheduler.Models
         [Display(Name = "Team Name")]
         public string TeamName { get; set; }
 
-        public virtual Tournament tournament { get; set; }
+        [ForeignKey("Tournament")]
+        public int TournamentID { get; set; }
+        public Tournament Tournament { get; set; }
     }
 }
