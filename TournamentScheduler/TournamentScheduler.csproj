@@ -170,6 +170,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RRFixtureController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Controllers\TournamentController.cs" />
     <Compile Include="Global.asax.cs">
@@ -179,10 +180,19 @@
     <Compile Include="Migrations\202105152324322_AddTournamentID.Designer.cs">
       <DependentUpon>202105152324322_AddTournamentID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105161400273_RRFixturesMigration.cs" />
+    <Compile Include="Migrations\202105161400273_RRFixturesMigration.Designer.cs">
+      <DependentUpon>202105161400273_RRFixturesMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105161404326_FixtureToTournament.cs" />
+    <Compile Include="Migrations\202105161404326_FixtureToTournament.Designer.cs">
+      <DependentUpon>202105161404326_FixtureToTournament.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RRFixture.cs" />
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\Tournament.cs" />
     <Compile Include="Models\TournamentSchedulerContext.cs" />
@@ -253,6 +263,12 @@
     <Content Include="Views\Team\Details.cshtml" />
     <Content Include="Views\Team\Edit.cshtml" />
     <Content Include="Views\Team\Index.cshtml" />
+    <Content Include="Views\Tournament\RoundRobin.cshtml" />
+    <Content Include="Views\RRFixture\Create.cshtml" />
+    <Content Include="Views\RRFixture\Delete.cshtml" />
+    <Content Include="Views\RRFixture\Details.cshtml" />
+    <Content Include="Views\RRFixture\Edit.cshtml" />
+    <Content Include="Views\RRFixture\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -273,6 +289,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202105152324322_AddTournamentID.resx">
       <DependentUpon>202105152324322_AddTournamentID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105161400273_RRFixturesMigration.resx">
+      <DependentUpon>202105161400273_RRFixturesMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105161404326_FixtureToTournament.resx">
+      <DependentUpon>202105161404326_FixtureToTournament.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -25,5 +25,7 @@ namespace TournamentScheduler.Models
         public DateTime StartDate { get; set; }
 
         public virtual ICollection<Team> Teams { get; set; }
+
+        public virtual ICollection<RRFixture> RRFixtures { get; set; }
     }
 }

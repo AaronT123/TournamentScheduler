@@ -73,6 +73,31 @@ namespace TournamentScheduler.Controllers
             return View(tournament);
         }
 
+
+        //GET: Round Robin
+        [Authorize]
+        public ActionResult RoundRobin(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Tournament tournament = db.Tournaments.Find(id);
+            if (tournament == null)
+            {
+                return HttpNotFound();
+            }
+            string currentUserID = User.Identity.GetUserId();
+            if (tournament.TournamentOwnerID == currentUserID)
+            {
+                return View(tournament);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

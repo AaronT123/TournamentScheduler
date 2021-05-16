@@ -22,5 +22,7 @@ namespace TournamentScheduler.Models
         public System.Data.Entity.DbSet<TournamentScheduler.Models.Tournament> Tournaments { get; set; }
 
         public System.Data.Entity.DbSet<TournamentScheduler.Models.Team> Teams { get; set; }
+
+        public System.Data.Entity.DbSet<TournamentScheduler.Models.RRFixture> RRFixtures { get; set; }
     }
 }
