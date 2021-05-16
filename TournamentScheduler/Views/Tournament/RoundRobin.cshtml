@@ -1,0 +1,32 @@
+﻿@model TournamentScheduler.Models.Tournament
+
+@{
+    ViewBag.Title = "RoundRobin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RoundRobin</h2>
+
+<table>
+    <tr>
+        <th>
+            Team
+        </th>
+        <th>
+            Score
+        </th>
+    </tr>
+
+    @foreach (var team in Model.Teams)
+    {
+        <tr>
+            <td>
+                @team.TeamName
+            </td>
+            <td>
+                Score Here
+            </td>
+        </tr>
+
+    }
+</table>
