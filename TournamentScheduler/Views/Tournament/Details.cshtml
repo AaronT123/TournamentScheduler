@@ -20,11 +20,26 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
+            Start Date
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            Started
+        </dt>
+
+        <dd>
+            @if (Model.TournamentStarted == true)
+            {
+                <p>Yes</p>
+            }
+            else
+            {
+                <p>No</p>
+            }
         </dd>
 
     </dl>
@@ -39,20 +54,43 @@
                 @team.TeamName
             </td>
             <td>
-                @Html.ActionLink("Delete", "Delete", "Team", new { id=team.TeamID }, null)
+
+            </td>
+            <td>
+                @if (Model.TournamentStarted == false)
+                {
+                <p>@Html.ActionLink("Delete", "Delete", "Team", new { id = team.TeamID }, null)</p>
+                }
+
             </td>
         </tr>
 
     }
 </table>
 
-<p>
-    @Html.ActionLink("Add a Team", "Create", "Team", new { TeamTournamentID = Model.TournamentID }, null)
-</p>
+<!--if tournament.tournamentstarted = false-->
+    @if (Model.TournamentStarted == false)
+    {
+        <p></p>
+        <p>@Html.ActionLink("Add a Team", "Create", "Team", new { TeamTournamentID = Model.TournamentID }, null)</p>
+    }
+    else
+    {
+        <p></p>
+        <p>Unable to add teams after the tournament has started</p>
+    }
+
 <hr />
-<p>
-    @Html.ActionLink("Start Tournament", "RoundRobin", "Tournament", new { id = Model.TournamentID }, null)
-</p>
+
+    @if (Model.TournamentStarted == false)
+    {
+        <p>@Html.ActionLink("Start Tournament", "RoundRobin", "Tournament", new { id = Model.TournamentID }, null)</p>
+    }
+    else
+    {
+        <p>@Html.ActionLink("View Tournament", "RoundRobin", "Tournament", new { id = Model.TournamentID }, null)</p>
+    }
+
 <hr />
 <p>
     @Html.ActionLink("View All Tournaments", "Index")

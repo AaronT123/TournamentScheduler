@@ -32,9 +32,9 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <div>
+        @Html.ActionLink("Back to Tournament", "Details", "Tournament", new { id = Model.TournamentID }, null)
+    </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

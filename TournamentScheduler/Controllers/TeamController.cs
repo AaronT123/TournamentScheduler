@@ -41,6 +41,7 @@ namespace TournamentScheduler.Controllers
         public ActionResult Create(int? TeamTournamentID)
         {
             Tournament MyTournament = db.Tournaments.Find(TeamTournamentID);
+
             string TournamentUserID = MyTournament.TournamentOwnerID;
             string currentUserID = User.Identity.GetUserId();
             if (TournamentUserID == currentUserID)

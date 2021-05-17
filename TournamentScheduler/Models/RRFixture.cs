@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -13,15 +14,26 @@ namespace TournamentScheduler.Models
         [Key]
         public int RRFixtureID { get; set; }
 
-        public int Team1ID { get; set; }
+        [ScaffoldColumn(false)]
+        public int RoundNumber { get; set; }
 
-        public int Team2ID { get; set; }
+        [ScaffoldColumn(false)]
+        public string Team1Name { get; set; }
 
+        [ScaffoldColumn(false)]
+        public string Team2Name { get; set; }
+
+        [DefaultValue(0)]
+        [Range(0, 1,
+        ErrorMessage = "Value must be 0 or 1")]
         public int Team1Score { get; set; }
 
+        [DefaultValue(0)]
+        [Range(0, 1,
+        ErrorMessage = "Value must be 0 or 1")]
         public int Team2Score { get; set; }
 
-        [ForeignKey("Tournament")]
+        [ScaffoldColumn(false)]
         public int TournamentID { get; set; }
         public Tournament Tournament { get; set; }
     }

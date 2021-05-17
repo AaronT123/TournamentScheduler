@@ -188,6 +188,34 @@
     <Compile Include="Migrations\202105161404326_FixtureToTournament.Designer.cs">
       <DependentUpon>202105161404326_FixtureToTournament.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105161435371_FixtureTeamIDtoName.cs" />
+    <Compile Include="Migrations\202105161435371_FixtureTeamIDtoName.Designer.cs">
+      <DependentUpon>202105161435371_FixtureTeamIDtoName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105161535082_RoundNumber.cs" />
+    <Compile Include="Migrations\202105161535082_RoundNumber.Designer.cs">
+      <DependentUpon>202105161535082_RoundNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105161954327_FixtureDataTypes.cs" />
+    <Compile Include="Migrations\202105161954327_FixtureDataTypes.Designer.cs">
+      <DependentUpon>202105161954327_FixtureDataTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105162020397_TournamentStarted.cs" />
+    <Compile Include="Migrations\202105162020397_TournamentStarted.Designer.cs">
+      <DependentUpon>202105162020397_TournamentStarted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105162123210_ScoreNull.cs" />
+    <Compile Include="Migrations\202105162123210_ScoreNull.Designer.cs">
+      <DependentUpon>202105162123210_ScoreNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105162308183_ScoreRange.cs" />
+    <Compile Include="Migrations\202105162308183_ScoreRange.Designer.cs">
+      <DependentUpon>202105162308183_ScoreRange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105162339502_removeFkey.cs" />
+    <Compile Include="Migrations\202105162339502_removeFkey.Designer.cs">
+      <DependentUpon>202105162339502_removeFkey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -232,8 +260,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -260,15 +286,8 @@
     <Content Include="Views\Tournament\Index.cshtml" />
     <Content Include="Views\Team\Create.cshtml" />
     <Content Include="Views\Team\Delete.cshtml" />
-    <Content Include="Views\Team\Details.cshtml" />
-    <Content Include="Views\Team\Edit.cshtml" />
-    <Content Include="Views\Team\Index.cshtml" />
     <Content Include="Views\Tournament\RoundRobin.cshtml" />
-    <Content Include="Views\RRFixture\Create.cshtml" />
-    <Content Include="Views\RRFixture\Delete.cshtml" />
-    <Content Include="Views\RRFixture\Details.cshtml" />
     <Content Include="Views\RRFixture\Edit.cshtml" />
-    <Content Include="Views\RRFixture\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -295,6 +314,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105161404326_FixtureToTournament.resx">
       <DependentUpon>202105161404326_FixtureToTournament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105161435371_FixtureTeamIDtoName.resx">
+      <DependentUpon>202105161435371_FixtureTeamIDtoName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105161535082_RoundNumber.resx">
+      <DependentUpon>202105161535082_RoundNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105161954327_FixtureDataTypes.resx">
+      <DependentUpon>202105161954327_FixtureDataTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105162020397_TournamentStarted.resx">
+      <DependentUpon>202105162020397_TournamentStarted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105162123210_ScoreNull.resx">
+      <DependentUpon>202105162123210_ScoreNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105162308183_ScoreRange.resx">
+      <DependentUpon>202105162308183_ScoreRange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105162339502_removeFkey.resx">
+      <DependentUpon>202105162339502_removeFkey.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -19,6 +20,10 @@ namespace TournamentScheduler.Models
 
         [ScaffoldColumn(false)]
         public string TournamentOwnerID { get; set; }
+
+        [ScaffoldColumn(false)]
+        [DefaultValue(false)]
+        public bool TournamentStarted { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
