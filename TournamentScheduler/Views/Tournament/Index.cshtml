@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<TournamentScheduler.Models.Tournament>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "All Tournaments";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>All Tournaments</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -16,7 +16,7 @@
             @Html.DisplayNameFor(model => model.TournamentName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StartDate)
+            Start Date
         </th>
         <th>
             Started

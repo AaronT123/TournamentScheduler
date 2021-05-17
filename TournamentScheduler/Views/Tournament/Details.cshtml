@@ -50,19 +50,17 @@
     @foreach (var team in Model.Teams)
     {
         <tr>
-            <td>
+            <td class="col-lg-2">
                 @team.TeamName
             </td>
-            <td>
-
-            </td>
-            <td>
+            <td class="col-lg-1">
                 @if (Model.TournamentStarted == false)
                 {
-                <p>@Html.ActionLink("Delete", "Delete", "Team", new { id = team.TeamID }, null)</p>
+                @Html.ActionLink("Delete", "Delete", "Team", new { id = team.TeamID }, null)
                 }
 
             </td>
+            <td class="col-lg-9"></td>
         </tr>
 
     }
@@ -93,5 +91,5 @@
 
 <hr />
 <p>
-    @Html.ActionLink("View All Tournaments", "Index")
+    @Html.ActionLink("View all Tournaments", "Index")
 </p>

@@ -1,57 +1,60 @@
 ﻿@model TournamentScheduler.Models.Tournament
 
 @{
-    ViewBag.Title = "RoundRobin";
+    ViewBag.Title = "Round Robin";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>RoundRobin</h2>
-
+<h2>Round Robin: @Model.TournamentName</h2>
+<br />
 <h4>Team Scores</h4>
+<br />
 <table>
     <tr>
-        <th>
+        <th class="col-lg-2">
             Team
         </th>
-        <th>
+        <th class="col-lg-1">
             Score
         </th>
+        <th class="col-lg-9"></th>
     </tr>
 
     @foreach (var team in Model.Teams)
     {
-        <tr>
-            <td>
-                @team.TeamName
-            </td>
-            <td>
-                @{
-                    int scoreCount = 0;
-                    foreach (var fixture in Model.RRFixtures)
+    <tr>
+        <td class="col-lg-2">
+            @team.TeamName
+        </td>
+        <td class="col-lg-1">
+            @{
+                int scoreCount = 0;
+                foreach (var fixture in Model.RRFixtures)
+                {
+                    if (fixture.Team1Name == team.TeamName)
                     {
-                        if (fixture.Team1Name == team.TeamName)
+                        if (fixture.Team1Score == 1)
                         {
-                            if (fixture.Team1Score == 1)
-                            {
-                                scoreCount += 1;
-                            }
-                        }
-                        if (fixture.Team2Name == team.TeamName)
-                        {
-                            if (fixture.Team2Score == 1)
-                            {
-                                scoreCount += 1;
-                            }
+                            scoreCount += 1;
                         }
                     }
-                    <p>@scoreCount</p>
+                    if (fixture.Team2Name == team.TeamName)
+                    {
+                        if (fixture.Team2Score == 1)
+                        {
+                            scoreCount += 1;
+                        }
+                    }
                 }
-            </td>
-        </tr>
+                <p>@scoreCount</p>
+            }
+        </td>
+        <td class="col-lg-9"></td>
+    </tr>
     }
 </table>
 <br />
-<h2>Fixtures</h2>
+<h4>Fixtures</h4>
 <br />
 @{
     int FinalRound = 0;
@@ -69,11 +72,12 @@
     <h4>Round @roundCount</h4>
     <table>
         <tr>
-            <th>Team 1 Score</th>
-            <th>Team 1</th>
-            <th></th>
-            <th>Team 2</th>
-            <th>Team 2 Score</th>
+            <th class="col-lg-1">Team 1 Score</th>
+            <th class="col-lg-3">Team 1</th>
+            <th class="col-lg-1"></th>
+            <th class="col-lg-3">Team 2</th>
+            <th class="col-lg-1">Team 2 Score</th>
+            <th class="col-lg-3"></th>
         </tr>
 
         @foreach (var fixture in Model.RRFixtures)
@@ -85,22 +89,22 @@
                     if (fixture.Team2Name != null)
                     {
                         <tr>
-                            <td>
+                            <td class="col-lg-1">
                                 @fixture.Team1Score
                             </td>
-                            <td>
+                            <td class="col-lg-3">
                                 @fixture.Team1Name
                             </td>
-                            <td>
+                            <td class="col-lg-1">
                                 VS
                             </td>
-                            <td>
+                            <td class="col-lg-3">
                                 @fixture.Team2Name
                             </td>
-                            <td>
+                            <td class="col-lg-1">
                                 @fixture.Team2Score
                             </td>
-                            <td>
+                            <td class="col-lg-3">
                                 <p>@Html.ActionLink("Choose Winner", "Edit", "RRFixture", new { id = fixture.RRFixtureID }, null)</p>
                             </td>
                         </tr>
